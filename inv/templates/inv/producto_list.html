@@ -1,0 +1,110 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+<div class="card shadow mb-4">
+  <!-- Card Header - Dropdown -->
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+    <h6 class="m-0 font-weight-bold text-primary">Listado de Materiales</h6>
+    <div class="dropdown no-arrow">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+        <div class="dropdown-header">Acciones:</div>
+            <a class="dropdown-item" href="{% url 'inv:producto_new' %}"><i class="far fa-calendar-plus"></i> Nuevo</a>
+      </div>
+    </div>
+  </div>
+  <!-- Card Body -->
+
+  <div class="card-body">
+    {% if not obj %}
+    <div class="alert alert-info">No Productos</div>
+    {% endif %}
+    <div class="buttons-toolbar">
+      <a class="dropdown-item" href="{% url 'inv:producto_new' %}"><i class="far fa-calendar-plus"></i> Nuevo</a>
+    </div>
+
+    <table 
+      id="table"
+      data-toggle="table"
+      data-pagination="true"
+      data-search="true"
+      data-show-columns="true"
+      data-show-toggle="true"
+      data-show-fullscreen="true"
+      data-toolbar=".buttons-toolbar"
+      data-locale="es-NI"
+    >
+      <thead>
+        <th data-sortable="true" data-field="id">ID</th>                
+        <th data-sortable="true" data-field="subcategoria">Sub.Categoria</th>        
+        <th data-sortable="true" data-field="descripcion">Descripción Producto</th>
+        <th data-sortable="true" data-field="nombre_comercial">Nombre Comercial</th>
+        <th data-sortable="true" data-field="marca">Marca</th>
+        <th data-sortable="true" data-field="espesor">Espesor</th>
+        <th data-sortable="true" data-field="densidad">Densidad</th>
+        <th data-sortable="true" data-field="coeficiente_conductividad">Cof. Conduct.</th>
+        <th data-sortable="true" data-field="resistencia_termica">Res. Térm (RT)</th>
+        <th data-sortable="true" data-field="transmitacia_termica">Trans.Ter (U)</th>
+        <th class="all">Acciones</th>
+      </thead>
+      <tbody>
+        {% for item in obj%}
+        <tr>
+          <td>{{ item.id }}</td>          
+          <td><a href="{% url 'inv:producto_edit' item.id %}" >{{ item.subcategoria }}</a></td>
+          <td>{{ item.descripcion }}</td>
+          <td>{{ item.nombre_comercial }}</td>
+          <td>{{ item.marca }}</td>
+          <td>{{ item.espesor }}</td>
+          <td>{{ item.densidad}}</td>
+          <td>{{ item.coeficiente_conductividad}}</td>
+          <td>{{ item.resistencia_termica}}</td>
+          <td>{{ item.transmitacia_termica}}</td>
+          <td>
+            <a href="{% url 'inv:producto_edit' item.id %}" class="btn btn-warning btn-circle" role="button"><i class="far fa-edit"></i></a> 
+            <a href="{% url 'inv:producto_inactivar' item.id %}" class="btn btn-danger btn-circle" role="button"><i class="far fa-thumbs-down"></i></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{% block js_page %}
+<!--
+<script>
+  // Call the dataTables jQuery plugin
+  $(document).ready(function() {
+    $('.table').DataTable({
+      "language": {
+        "sProcessing": "Procesando...",
+        "sLengthMenu": "Mostrar _MENU_ registros",
+        "sZeroRecords": "No se encontraron resultados",
+        "sEmptyTable": "Ningún dato disponible en esta tabla",
+        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+        "sInfoPostFix": "",
+        "sSearch": "Buscar:",
+        "sUrl": "",
+        "sInfoThousands": ",",
+        "sLoadingRecords": "Cargando...",
+        "oPaginate": {
+            "sFirst": "<span class='fa fa-angle-double-left'></span>",
+            "sLast": "<span class='fa fa-angle-double-right'></span>",
+            "sNext": "<span class='fa fa-angle-right'></span>",
+            "sPrevious": "<span class='fa fa-angle-left'></span>"
+        },
+        "oAria": {
+            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+        }
+      }
+    });
+  });
+  </script>
+-->  
+{% endblock %}

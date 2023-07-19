@@ -1,0 +1,217 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+<form method="POST" class="form-inline">
+    {% csrf_token %}
+    <div class="col-xl-12 col-md-12 mb-12">
+        {% if obj %}
+        <div class="card border-left-warning shadow h-100 py-2">
+        {% else %}
+        <div class="card border-left-success shadow h-100 py-2">
+        {% endif %}
+            <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        {% if obj %} Editar {% else %} Nuevo {% endif %} Producto
+                    </div>
+                    <div class="dropdown-divider"></div>
+
+                    <div class="row">
+                        <div class="col-xl-6 from-control-sm-4">
+                            <div class="row">
+                                <div class="col-md-6">{{form.marca.label}}</div>
+                                <div class="col-md-6">{{form.marca}}</div>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Detalle
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-5 from-control-sm-4" style="background-color: blueviolet;">
+                                <div class="row">
+                                    <div style="color: aliceblue;" class="col-md-3">{{form.codigo.label}} </div>
+                                    <div class="col-md-5">{{form.codigo}}</div>
+                                </div>
+                                <div class="row">
+                                    <div style="color: aliceblue;" class="col-md-3">{{form.codigo_barra.label}}</div>
+                                    <div class="col-md-5">{{form.codigo_barra}}</div>    
+                                </div>
+                                <div class="row">
+                                    <div style="color: aliceblue;" class="col-md-3">{{form.descripcion.label}}</div>
+                                    <div class="col-md-5">{{form.descripcion}}</div>
+                                </div>
+                        </div> 
+
+                        <div class="col-xl-5 from-control-sm-4"  style="background-color: blueviolet;">
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.precio.label}} </div>
+                                <div class="col-md-5">{{form.precio}}</div>
+                            </div>
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.moneda.label}}</div>
+                                <div class="col-md-5">{{form.moneda}}</div>    
+                            </div>
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.unidad_medida.label}}</div>
+                                <div class="col-md-5">{{form.unidad_medida}}</div>
+                            </div>
+                        </div>        
+
+                        <div class="col-xl-2 from-control-sm-4"  style="background-color: blueviolet;">
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-5">{{form.estado.label}}</div>
+                                <div class="col-md-5">{{form.estado}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Información Térmica
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 from-control-sm-4"; style="background-color: blueviolet;">
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-4">{{form.zona.label}}</div>
+                                <div class="col-md-3">{{form.zona}}</div>    
+                            </div>                        
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-4">{{form.espesor.label}}</div>
+                                <div class="col-md-3">{{form.espesor}}</div>    
+                            </div>  
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-4">{{form.densidad.label}}</div>
+                                <div class="col-md-3">{{form.densidad}}</div>    
+                            </div>     
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-4">{{form.coeficiente_conductividad.label}}</div>
+                                <div class="col-md-3">{{form.coeficiente_conductividad}}</div>    
+                            </div>                        
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-4">{{form.vigencia_inscripcion.label}}</div>
+                                <div class="col-md-3">{{form.vigencia_inscripcion}}</div>    
+                            </div>                        
+                        </div>
+
+                        <div class="col-xl-4 from-control-sm-4"; style="background-color: blueviolet;">
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-1.5">{{form.usos.label}}</div>
+                                <div class="col-md-4">{{form.usos}}</div>    
+                            </div>  
+                        </div>
+                        <div class="col-xl-4 from-control-sm-4"; style="background-color: blueviolet;">
+                                <div class="row">
+                                    <div style="color: aliceblue;" class="col-md-1.5">{{form.glosa.label}}</div>
+                                    <div class="col-md-4">{{form.glosa}}</div>    
+                                </div>                                  
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Información de Eficiencia
+                    </div>                        
+                    <div class="row">
+                        <div class="col-xl-6 from-control-sm-4"; style="background-color: blueviolet;">
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.potencia.label}}</div>
+                                <div class="col-md-3">{{form.potencia}}</div>    
+                            </div>                                  
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.eficiencia_energetica.label}}</div>
+                                <div class="col-md-3">{{form.eficiencia_energetica}}</div>    
+                            </div>   
+                        </div>
+
+                        <div class="col-xl-6 from-control-sm-4"; style="background-color: blueviolet;">
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.clase_energetica.label}}</div>
+                                <div class="col-md-3">{{form.clase_energetica}}</div>    
+                            </div>                                  
+                            <div class="row">
+                                <div style="color: aliceblue;" class="col-md-3">{{form.consumo.label}}</div>
+                                <div class="col-md-3">{{form.consumo}}</div>    
+                            </div>                                  
+                        </div>
+                    
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        Ubicación
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-6">Categoría</div>
+                            <div class="col-md-6">
+                                <select name="categoria" id="id_categoria" class="form-control from-control-sm">
+                                    <option value="0">-------</option>
+                                    {% for item in categorias %}
+                                    <option value="{{item.id}}">{{item.descripcion}}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-6">Sub Categoría</div>
+                            <div class="col-md-6">
+                                <select name="subcategoria" id="id_subcategoria" class="form-control from-control-sm">
+                                    <option value="0">-------</option>
+                                    {% for item in subcategorias %}
+                                    <option value="{{item.id}}" data-chained="{{item.categoria.id}}">{{item.descripcion}}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
+                        </div>                           
+                    </div>
+
+
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                {{form.foto.label}}
+                            </div>
+                            <div class="col-md-8">
+                                {% if obj.foto %}
+                                <img src="{{obj.foto.url}}" width="80%" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-2">
+                                <input type="file" name="foto" id="id_foto" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Guardar</button>
+                            <a href="{% url 'inv:producto_list' %}" class="btn btn-success"><span class="fa fa-undo"></span>Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% block js_page %}
+
+<script>
+    $(function() {
+        $("#id_categoria").val("{{ obj.subcategoria.categoria.id }}").change();
+        $("#id_subcategoria").val("{{ obj.subcategoria.id }}").change();
+        $("#id_subcategoria").chained("#id_categoria");
+    });
+</script>
+{% endblock %}
