@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'inv',
     'cmp',
     'fac',
-#    'django_userforeignkey',
+    'django_userforeignkey',
 #    'rest_framework',
 #    'crispy_forms',
  ]
