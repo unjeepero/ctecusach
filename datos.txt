@@ -3,9 +3,24 @@ mauro
 Mauro
 
 virtualenv en pythonanywhere
-13:05 ~ $ mkvirtualenv --python=python3.8 materiales
-created virtual environment CPython3.8.10.final.0-64 in 54950ms
+14:26 ~ $ mkvirtualenv --python=python3.8 materiales
+created virtual environment CPython3.8.10.final.0-64 in 66428ms
   creator CPython3Posix(dest=/home/ctecusach/.virtualenvs/materiales, clear=False, no_vcs_ignore=False, global=False)
   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/ctecusach/.local/share/virtualenv)
-    added seed packages: pip==23.1.2, setuptools==68.0.0, wheel==0.40.0
+    added seed packages: pip==22.1.2, setuptools==62.6.0, wheel==0.37.1
   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+virtualenvwrapper.user_scripts creating /home/ctecusach/.virtualenvs/materiales/bin/predeactivate
+virtualenvwrapper.user_scripts creating /home/ctecusach/.virtualenvs/materiales/bin/postdeactivate
+virtualenvwrapper.user_scripts creating /home/ctecusach/.virtualenvs/materiales/bin/preactivate
+virtualenvwrapper.user_scripts creating /home/ctecusach/.virtualenvs/materiales/bin/postactivate
+virtualenvwrapper.user_scripts creating /home/ctecusach/.virtualenvs/materiales/bin/get_env_details
+(materiales) 14:30 ~ $ 
+
+git clone +  url del git
+
+pip install -r requirements.txt / para instalar las dependencias
+
+python manage.py check --deploy / para verificar que lo subido quedo ok, previo al despliegue
+
+
+  
