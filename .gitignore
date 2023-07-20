@@ -116,6 +116,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.datos.txt
 
 # Spyder project settings
 .spyderproject

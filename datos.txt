@@ -1,0 +1,11 @@
+acceso local
+mauro
+Mauro
+
+virtualenv en pythonanywhere
+13:05 ~ $ mkvirtualenv --python=python3.8 materiales
+created virtual environment CPython3.8.10.final.0-64 in 54950ms
+  creator CPython3Posix(dest=/home/ctecusach/.virtualenvs/materiales, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/ctecusach/.local/share/virtualenv)
+    added seed packages: pip==23.1.2, setuptools==68.0.0, wheel==0.40.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
