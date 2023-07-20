@@ -86,13 +86,31 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'db_djfull',
+#        'HOST': 'localhost',
+#        'USER': 'postgres',
+#        'PASSWORD': 'mauro',
+#        'PORT': '5432',
+#    }
+#}
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_djfull',
-        'HOST': 'localhost',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'mauro',
+        'HOST': 'db.rcriiaxabjynovttccnl.supabase.co',
+        'PASSWORD': 'UsachCtec2023',
         'PORT': '5432',
     }
 }

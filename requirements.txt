@@ -11,3 +11,4 @@ sqlparse==0.3.0
 webencodings==0.5.1
 whitenoise==5.1.0
 xhtml2pdf==0.2.3
+django-userforeignkey
