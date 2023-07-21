@@ -26,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'pzmaeg=(8-0#5yt^s#lk5+1km!h3jbg4wchu6souuv!9l#%2tc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = ["127.0.0.1",".herokuapp.com"]
-ALLOWED_HOSTS = ['tac04.pythonanywhere.com','ctecusach.pythonanywhere.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['ctecusach.pythonanywhere.com','localhost','127.0.0.1','ff92-201-189-117-34.ngrok-free.app']
 
 # Application definition
 
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'fac',
     'django_userforeignkey',
 #    'rest_framework',
-#    'crispy_forms',
+    'crispy_forms',
  ]
 
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_userforeignkey.middleware.UserForeignKeyMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
