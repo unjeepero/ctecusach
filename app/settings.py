@@ -26,10 +26,10 @@ SECRET_KEY = 'pzmaeg=(8-0#5yt^s#lk5+1km!h3jbg4wchu6souuv!9l#%2tc'
 #SECRET_KEY=config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ["127.0.0.1",".herokuapp.com"]
-ALLOWED_HOSTS = [ctecusach.pythonanywhere.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['ctecusach.pythonanywhere.com','localhost','127.0.0.1']
 
 # Application definition
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_userforeignkey.middleware.UserForeignKeyMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
