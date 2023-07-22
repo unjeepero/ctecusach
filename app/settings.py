@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(rbdd0e_$46ccz&=7@i!_l)emx$b%dv_-%k-_vd^-xmlku#)83'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ctecusach.pythonanywhere.com','localhost','127.0.0.1']
 
@@ -87,6 +87,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'postgres',
+#        'USER': 'postgres',
+#        'HOST': 'db.rcriiaxabjynovttccnl.supabase.co',
+#        'PASSWORD': 'UsachCtec2023',
+#        'PORT': '5432',
+#    }
+#}
 
 
 # Password validation
