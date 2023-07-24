@@ -1,5 +1,6 @@
 from model_utils.models import TimeStampedModel
 
+#from django.utils import timezone
 from django.db import models
 
 from bases.models import ClaseModelo
@@ -86,7 +87,8 @@ class Producto(ClaseModelo):
     ZONA5= 'Zona 5'
     ZONA6= 'Zona 6'
     ZONA7= 'Zona 7'
-    ZONA7= 'Todas'
+    ZONA7= 'Sin Info.'
+    ZONA8= 'Todas'
 
     ZONA_GEOGRAFICA = [
         (ZONA0, 'Seleccione..'),
@@ -97,6 +99,7 @@ class Producto(ClaseModelo):
         (ZONA5, 'Zona 5'),
         (ZONA6, 'Zona 6'),
         (ZONA7, 'Zona 7'),
+        (ZONA7, 'Sin Info.'),
         (ZONA7, 'Todas')
     ]
 
@@ -154,6 +157,7 @@ class Producto(ClaseModelo):
     ultima_compra = models.DateField(null=True, blank=True)
 
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+#    marca = models.ManyToManyField(Marca)
     unidad_medida = models.ForeignKey(UnidadMedida, on_delete=models.CASCADE)
     subcategoria = models.ForeignKey(SubCategoria, on_delete=models.CASCADE)
     foto = models.ImageField(upload_to="images/",null=True,blank=True)

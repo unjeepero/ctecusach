@@ -38,7 +38,8 @@
     >
       <thead>
         <th data-sortable="true" data-field="id">ID</th>                
-        <th data-sortable="true" data-field="subcategoria">Sub.Categoria</th>        
+        <th data-sortable="true" data-field="codigo">Codigo</th>        
+<!--        <th data-sortable="true" data-field="subcategoria">Sub.Categoria</th>        -->
         <th data-sortable="true" data-field="descripcion">Descripción Producto</th>
         <th data-sortable="true" data-field="nombre_comercial">Nombre Comercial</th>
         <th data-sortable="true" data-field="marca">Marca</th>
@@ -47,14 +48,15 @@
         <th data-sortable="true" data-field="coeficiente_conductividad">Cof. Conduct.</th>
         <th data-sortable="true" data-field="resistencia_termica">Res. Térm (RT)</th>
         <th data-sortable="true" data-field="transmitacia_termica">Trans.Ter (U)</th>
-        <th class="all">Acciones</th>
+        <th data-sortable="true" data-field="precio">Precio</th>
       </thead>
       <tbody>
         {% for item in obj%}
         <tr>
           <td>{{ item.id }}</td>          
-          <td><a href="{% url 'inv:producto_edit' item.id %}" >{{ item.subcategoria }}</a></td>
-          <td>{{ item.descripcion }}</td>
+          <td><a href="{% url 'inv:producto_edit' item.id %}" >{{ item.codigo }}</a></td>
+<!--          <td><a href="{% url 'inv:producto_edit' item.id %}" >{{ item.subcategoria }}</a></td> -->
+          <td><a href="{% url 'inv:producto_edit' item.id %}" >{{ item.descripcion }}</a></td>
           <td>{{ item.nombre_comercial }}</td>
           <td>{{ item.marca }}</td>
           <td>{{ item.espesor }}</td>
@@ -62,10 +64,7 @@
           <td>{{ item.coeficiente_conductividad}}</td>
           <td>{{ item.resistencia_termica}}</td>
           <td>{{ item.transmitacia_termica}}</td>
-          <td>
-            <a href="{% url 'inv:producto_edit' item.id %}" class="btn btn-warning btn-circle" role="button"><i class="far fa-edit"></i></a> 
-            <a href="{% url 'inv:producto_inactivar' item.id %}" class="btn btn-danger btn-circle" role="button"><i class="far fa-thumbs-down"></i></a>
-          </td>
+          <td>{{ item.precio}}</td>
         </tr>
         {% endfor %}
       </tbody>

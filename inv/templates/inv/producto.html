@@ -22,9 +22,9 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <div class="form-group row">
-                                <div class="col-md-2">{{form.marca.label}}</div>
-                                <div class="col-md-8">{{form.marca}}</div>    
-                            </div>
+                                 <div class="col-md-4">{{form.estado.label}}</div>
+                                 <div class="col-md-8">{{form.estado}}</div>
+                                </div>
                             <div class="form-group row">
                                 <div class="col-md-4">{{form.nombre_comercial.label}}</div>
                                 <div class="col-md-6">{{form.nombre_comercial}}</div>    
@@ -57,14 +57,17 @@
                             </div>                            
                         </div>
                             
-
                         <div class="col-4">
                             <div class="form-group row">
-                                <div class="col-md-4">{{form.estado.label}}</div>
-                                <div class="col-md-8">{{form.estado}}</div>
+                                <div class="col-md-2">{{form.marca.label}}</div>
+                                <div class="col-md-8">{{form.marca}}</div>    
                             </div>
-                        </div>
+                            <div class="form-group row">
+                                <div class="col-md-2">.</div>
+                                <div class="col-md-8">.</div>    
+                            </div>
 
+                        </div>
                     </div>
 
                     <div class="dropdown-divider"></div>
@@ -134,7 +137,7 @@
                                 <div class="col-md-4">{{form.zona}}</div>    
                             </div>                        
                             <div class="form-group row">
-                                <div class="col-md-8">{{form.espesor.label}}</div>
+                                <div class="col-md-8">Espesor Aislante</div>
                                 <div class="col-md-4">{{form.espesor}}</div>    
                             </div>  
                             <div class="form-group row">
@@ -305,7 +308,9 @@
                     <div class="dropdown-divider"></div>
                     <div class="form-group row">
                         <div class="col">
-                            <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Guardar</button>
+                            {% if perms.inv.add_producto %}
+                                <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Guardar</button>
+                            {% endif %}
                             <a href="{% url 'inv:producto_list' %}" class="btn btn-success"><span class="fa fa-undo"></span>Cancelar</a>
                         </div>
                     </div>

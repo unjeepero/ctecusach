@@ -2,6 +2,10 @@ acceso local
 mauro
 Admin23
 
+consultas
+CtecUsach
+
+
 virtualenv en pythonanywhere
 14:26 ~ $ mkvirtualenv --python=python3.8 materiales
 created virtual environment CPython3.8.10.final.0-64 in 66428ms

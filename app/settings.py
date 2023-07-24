@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(rbdd0e_$46ccz&=7@i!_l)emx$b%dv_-%k-_vd^-xmlku#)83'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ctecusach.pythonanywhere.com','localhost','127.0.0.1']
 
@@ -139,7 +139,7 @@ MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
